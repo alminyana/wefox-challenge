@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PostsComponent } from './posts/posts.component';
 import { CreateComponent } from './create/create.component';
 import { PostItemComponent } from './posts/post-item/post-item.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostItemComponent } from './posts/post-item/post-item.component';
     HeaderComponent,
     PostsComponent,
     CreateComponent,
-    PostItemComponent
+    PostItemComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
