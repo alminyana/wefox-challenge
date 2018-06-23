@@ -1,3 +1,10 @@
-<p>
-  post-list works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <button class="btn btn-sm btn-success">Add Post</button>
+      </li>
+          <wefox-post-item *ngFor="let postEl of allPosts" [post]="postEl"></wefox-post-item>
+    </ul>
+  </div>
+</div>

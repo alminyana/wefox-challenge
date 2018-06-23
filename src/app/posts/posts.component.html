@@ -1,9 +1,8 @@
-
 <div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="list-group-item active">Posts</li>
-          <wefox-post-item *ngFor="let postEl of allPosts" [post]="postEl"></wefox-post-item>
-    </ul>
+  <div class="col-md-5">
+    <wefox-post-list></wefox-post-list>
+  </div>
+  <div class="col-md-7">
+    <router-outlet></router-outlet>
   </div>
 </div>

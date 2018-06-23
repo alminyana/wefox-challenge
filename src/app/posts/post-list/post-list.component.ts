@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Post } from '../../model/post.model';
+import { PostsService } from '../../posts.service';
 
 @Component({
   selector: 'wefox-post-list',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  constructor() { }
+  allPosts: Post[] = null;
+
+  @Output() post: Post;
+
+  constructor(private postsrv: PostsService) { }
 
   ngOnInit() {
+    this.getAllPosts();
+  }
+
+
+
+  getAllPosts() {
+    this.postsrv.getAllPosts()
+      .subscribe(
+        (data: Post[]) => {
+          console.log(data);
+
+          this.allPosts = data;
+        }
+      );
   }
 
 }
