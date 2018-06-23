@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../posts.service';
 import { Post } from '../model/post.model';
 
@@ -9,26 +9,13 @@ import { Post } from '../model/post.model';
 })
 export class PostsComponent implements OnInit {
 
-  allPosts: Post[] = null;
-
-  @Output() post: Post;
-
-  constructor(private postsrv: PostsService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getAllPosts();
+
   }
 
-  getAllPosts() {
-    this.postsrv.getAllPosts()
-      .subscribe(
-        (data: Post[]) => {
-          console.log(data);
 
-          this.allPosts = data;
-        }
-      );
-  }
 
 
 }
