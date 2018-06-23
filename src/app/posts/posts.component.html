@@ -1,3 +1,9 @@
-<p>
-  posts works!
-</p>
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item active">Posts</li>
+          <wefox-post-item *ngFor="let postEl of allPosts" [post]="postEl"></wefox-post-item>
+    </ul>
+  </div>
+</div>
