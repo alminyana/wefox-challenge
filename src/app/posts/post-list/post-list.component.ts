@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Post } from '../../model/post.model';
 import { PostsService } from '../../posts.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wefox-post-list',
@@ -13,13 +14,13 @@ export class PostListComponent implements OnInit {
 
   @Output() post: Post;
 
-  constructor(private postsrv: PostsService) { }
+  constructor(private postsrv: PostsService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getAllPosts();
   }
-
-
 
   getAllPosts() {
     this.postsrv.getAllPosts()
@@ -30,6 +31,11 @@ export class PostListComponent implements OnInit {
           this.allPosts = data;
         }
       );
+  }
+
+  onCreatePost() {
+    this.router.navigate(['/new']); //absolute path
+    //this.router.navigate(['new'], {relativeTo: this.route}); //relative route
   }
 
 }
