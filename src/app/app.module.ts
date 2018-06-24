@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 //services
 import { PostsService } from './posts.service';
@@ -29,7 +30,8 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

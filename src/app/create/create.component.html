@@ -1,3 +1,47 @@
-<p>
-  create works!
-</p>
+<div class="row">
+
+    <div class="col-xs-12">
+      <h3 class="text text-success">Create Post</h3>
+  <form (ngSubmit)="onSubmit(newPost)" #newPost="ngForm">
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="form-group">
+              <label for="title">Title *</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" ngModel required />
+            </div>
+            <div class="form-group">
+              <label for="content">Content *</label>
+              <textarea type="text" class="form-control" id="content" rows="4" placeholder="Enter content" ngModel name="content" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="image_url">Image URL</label>
+              <input type="text" class="form-control" ngModel name="image_url" id="image_url" placeholder="Enter image url">
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6">
+                  <label for="lat">Latitude</label>
+                  <input type="number" class="form-control" ngModel name="lat" id="lat" placeholder="Enter Latitude">
+                </div>
+                <div class="col-xs-6">
+                  <label for="long">Longitude</label>
+                  <input type="number" class="form-control" id="long" ngModel name="long" placeholder="Enter Longitude">
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+          <button type="submit" [disabled]="!newPost.valid" class="btn btn-success btn-sm">Send data</button>
+          <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+        </div>
+      </div>
+
+  </form>
+
+    </div>
+
+</div>

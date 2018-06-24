@@ -11,15 +11,20 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
 
-  getAllPosts() {
-    let url: string = AppConfig.getPosts;
+  getAllPosts(): Observable<any> {
+    const url: string = AppConfig.getPosts;
 
     return this.http.get(url, {observe: 'body', responseType: 'json'});
   }
 
-  getPostById(id: number) {
-    let url: string = AppConfig.getPosts + '/' + id;
+  getPostById(id: number): Observable<any> {
+    const url: string = AppConfig.getPosts + '/' + id;
     return this.http.get(url, {observe: 'body', responseType: 'json'});
+  }
+
+  createPost(post) {
+    const url: string =  AppConfig.getPosts;
+    return this.http.post(url, post);
   }
 
 
