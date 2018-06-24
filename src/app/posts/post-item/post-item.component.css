@@ -6,3 +6,7 @@
 li {
   margin: 1em 0;
 }
+
+.activeCustom {
+  background-color: #ddd;
+}
