@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Post } from '../model/post.model';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'wefox-create',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postsrv: PostsService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: NgForm) {
+    let newPost = {
+      post: form.value
+    };
+    console.log(newPost);
+
+    this.postsrv.createPost(newPost)
+      .subscribe(
+        (data) => {
+          console.log(data);
+        }
+      );
+
+
   }
 
 }
