@@ -22,7 +22,7 @@ export class PostDetailComponent implements OnInit {
   currentLat: number;
   currentLong: number;
 
-
+  show: boolean = false;
 
   constructor(private postsrv: PostsService,
               private route: ActivatedRoute,
@@ -45,7 +45,7 @@ export class PostDetailComponent implements OnInit {
   }
 
   showMap(current: Post) {
-
+    this.show = true;
     this.currentLat = +current.lat;
     this.currentLong = +current.long;
 
