@@ -31,15 +31,18 @@ export class PostDetailComponent implements OnInit {
     );
   }
 
-  onDeletePost(post: Post) {
-    console.log(post);
+  onDeletePost(post: Post): void {
+    //console.log(post);
     this.postsrv.deletePost(post.id)
       .subscribe(
         (data: null) => {
-          console.log(data);
           this.router.navigate(['/posts']);
         }
       );
+  }
+
+  onUpdatePost(post: Post): void {
+
   }
 
 }
