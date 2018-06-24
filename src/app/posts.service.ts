@@ -24,7 +24,7 @@ export class PostsService {
     return this.http.get(url, {observe: 'body', responseType: 'json'});
   }
 
-  createPost(post) {
+  createPost(post: any) {
     const url: string =  AppConfig.getPosts;
     return this.http.post(url, post);
   }
@@ -33,5 +33,12 @@ export class PostsService {
     const url: string = AppConfig.getPosts + '/' + id;
     return this.http.delete(url);
   }
+
+  updatePost(model: any, id:number) {
+    const url: string = AppConfig.getPosts + '/' + id;
+    return this.http.put(url, model);
+  }
+
+
 
 }

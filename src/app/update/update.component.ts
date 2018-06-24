@@ -48,6 +48,23 @@ onGoToPosts() {
   this.router.navigate(['/posts']);
 }
 
+onSubmit(form: NgForm) {
+  let newPost = {
+    post: form.value
+  };
+  this.postsrv.updatePost(newPost, this.id)
+    .subscribe(
+      (data: Response) => {
+        console.log(data);
+        this.router.navigate(['/posts']);
+      }
+    );
+}
+
+
+
+
+
 
 
 }
