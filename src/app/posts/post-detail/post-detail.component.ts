@@ -42,7 +42,11 @@ export class PostDetailComponent implements OnInit {
   }
 
   onUpdatePost(post: Post): void {
-
+    //this.postsrv.postToUpdate.emit(post);
+    this.router.navigate(['/edit/' + post.id]);
   }
+
+
+
 
 }

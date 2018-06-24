@@ -29,8 +29,14 @@ export class CreateComponent implements OnInit {
           this.router.navigate(['/posts']);
         }
       );
-
-
   }
+
+  onGoToPosts() {
+    this.router.navigate(['/posts']);
+  }
+
+
+  
+
 
 }

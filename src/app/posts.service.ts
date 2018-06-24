@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -7,6 +7,8 @@ import { AppConfig } from './app-config';
 
 @Injectable()
 export class PostsService {
+
+  //postToUpdate: EventEmitter <Post> = new EventEmitter ();
 
   constructor(private http: HttpClient) { }
 
