@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -7,6 +7,8 @@ import { AppConfig } from './app-config';
 
 @Injectable()
 export class PostsService {
+
+  //postToUpdate: EventEmitter <Post> = new EventEmitter ();
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +24,7 @@ export class PostsService {
     return this.http.get(url, {observe: 'body', responseType: 'json'});
   }
 
-  createPost(post) {
+  createPost(post: any) {
     const url: string =  AppConfig.getPosts;
     return this.http.post(url, post);
   }
@@ -31,5 +33,12 @@ export class PostsService {
     const url: string = AppConfig.getPosts + '/' + id;
     return this.http.delete(url);
   }
+
+  updatePost(model: any, id:number) {
+    const url: string = AppConfig.getPosts + '/' + id;
+    return this.http.put(url, model);
+  }
+
+
 
 }

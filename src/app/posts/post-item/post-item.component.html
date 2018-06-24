@@ -7,9 +7,8 @@
       <button class="btn btn-xs btn-danger" (click)="onDeletePost(post)">Remove</button> -->
     </div>
     <div class="col-xs-6">
-      <img *ngIf="post.image_url" width="80" class="img-rounded img-responsive" src="{{post.image_url}}" alt="Place image"
-      onError="this.src='assets/no-image-available.png';">
-      <img *ngIf="!post.image_url" class="img-rounded img-responsive" src="assets/no-image-available.png" alt="Place image">
+      <img *ngIf="post.image_url" width="80" class="img-rounded img-responsive pull-right" src="{{post.image_url}}" alt="Place image" onError="this.src='assets/no-image-available.png';">
+      <img *ngIf="!post.image_url" width="80" class="img-rounded img-responsive pull-right" src="assets/no-image-available.png" alt="Place image">
     </div>
   </div>
 </a>

@@ -16,6 +16,7 @@ import { CreateComponent } from './create/create.component';
 import { PostItemComponent } from './posts/post-item/post-item.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
     CreateComponent,
     PostItemComponent,
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

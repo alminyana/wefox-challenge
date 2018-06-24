@@ -1,8 +1,9 @@
 
 <div class="row" *ngIf="selectedPost">
   <div class="col-xs-10 col-xs-offset-1">
-    <img class="img-rounded img-responsive img-thumbnail" src="{{selectedPost.image_url}}" alt="">
-    <div class="">
+    <img *ngIf="selectedPost.image_url" class="img-rounded img-responsive img-thumbnail" src="{{selectedPost.image_url}}" onError="this.src='assets/no-image-available.png';" alt="" />
+    <img *ngIf="!selectedPost.image_url" class="img-rounded img-responsive img-thumbnail" src="assets/no-image-available.png" alt="Place image" />
+    <div class="top1">
       <h2>{{selectedPost.title}}</h2>
     </div>
     <div class="row">
@@ -15,7 +16,8 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-xs btn-danger top1" (click)="onDeletePost(selectedPost)">Remove</button>
+        <button class="btn btn-sm btn-primary top1" (click)="onUpdatePost(selectedPost)">Update</button>
+        <button class="btn btn-sm btn-danger top1" (click)="onDeletePost(selectedPost)">Remove</button>
       </div>
     </div>
     <div class="row">

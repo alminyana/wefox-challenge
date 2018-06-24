@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostsComponent } from './posts/posts.component';
 import { CreateComponent } from './create/create.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
+import { UpdateComponent } from './update/update.component';
 
 
 const appRoutes: Routes = [
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
     { path: ':id', component: PostDetailComponent },
   ] },
   { path: 'new', component: CreateComponent },
+  { path: 'edit/:id', component: UpdateComponent },
 ];
 
 @NgModule({
