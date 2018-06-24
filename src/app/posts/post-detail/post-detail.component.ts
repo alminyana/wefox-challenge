@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../model/post.model';
 import { PostsService } from '../../posts.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'wefox-post-detail',
@@ -13,7 +13,9 @@ export class PostDetailComponent implements OnInit {
   id: number;
   selectedPost: Post;
 
-  constructor(private postsrv: PostsService, private route: ActivatedRoute) { }
+  constructor(private postsrv: PostsService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -22,13 +24,22 @@ export class PostDetailComponent implements OnInit {
         this.postsrv.getPostById(this.id)
           .subscribe(
             (data: Post) => {
-              console.log('detail::', data);
               this.selectedPost = data;
             }
           );
       }
     );
+  }
 
+  onDeletePost(post: Post) {
+    console.log(post);
+    this.postsrv.deletePost(post.id)
+      .subscribe(
+        (data: null) => {
+          console.log(data);
+          this.router.navigate(['/posts']);
+        }
+      );
   }
 
 }

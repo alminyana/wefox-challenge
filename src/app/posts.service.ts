@@ -27,5 +27,9 @@ export class PostsService {
     return this.http.post(url, post);
   }
 
+  deletePost(id: number) {
+    const url: string = AppConfig.getPosts + '/' + id;
+    return this.http.delete(url);
+  }
 
 }
